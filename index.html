@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AmokaHouses</title>
+  <link rel="stylesheet" href="style.css" />
+
+ <script src="script.js" defer></script>
+
+
+<linkrel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome 6.5 CDN for latest icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+ 
+  <div class="hero">
+    <div class="overlay">
+
+      <!-- Header: Logo + Navigation -->
+      <div class="header-bar">
+        <img src="img/AmokaL.png" alt="AmokaHouses Logo" class="logo" />
+
+
+         <!-- Menu Toggle Button for Mobile -->
+ <!-- Menu Toggle Button -->
+<!-- Hamburger button -->
+<button class="menu-toggle" id="menuToggle">
+  <i class="fas fa-bars"></i>
+</button>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <!-- Close button -->
+  <button id="closeBtn" class="close-btn">
+    <i class="fas fa-times"></i>
+  </button>
+  
+  <ul class="nav-links">
+    <li><a href="index.html">Home.</a></li>
+    <li><a href="listings.html">Listings.</a></li>
+    <li><a href="aboutus.html">About Us.</a></li>
+    <li><a href="contact.html">Contact.</a></li>
+  </ul>
+</nav>
+
+
+        <div class="theme-toggle">
+  <span class="material-symbols-outlined" id="mode-toggle" title="Toggle Night/Light Mode">toggle_off</span>
+</div>
+  </div>
+      <!-- Hero Main Text -->
+      <div class="hero-content">
+       <h1>Welcome to 
+  <span class="amoka">Amoka</span>
+  <span class="blue">-BLUE</span> 
+  <span class="houses">Houses</span>
+</h1>
+
+        <p>-Your perfect real estate destination-</p>
+        <a href="listings.html" class="btn">Explore Listings.</a>
+      </div>
+
+    </div>
+  </div>
+<!-- ================================
+     Search Bar Section - AmokaHouses
+==================================== -->
+<section class="search-bar">
+  
+  <!-- Search Form Begins -->
+  <form class="search-form">
+
+    <!-- Location Dropdown -->
+    <select name="location" required>
+      <option value="">Location.</option>
+      <option value="nairobi">Nairobi.</option>
+      <option value="kisumu">Kisumu.</option>
+      <option value="mombasa">Mombasa.</option>
+      <option value="Eldoret">Eldoret.</option>
+      <option value="Kilifi">Kilifi.</option>
+      <option value="Kiambu">Kiambu.</option>
+      <option value="Machakos">Machakos.</option>
+      <option value="Nyeri">Nyeri.</option>
+      <option value="Nakuru">Nakuru.</option>
+    </select>
+
+    <!-- Property Type Dropdown -->
+    <select name="type" required>
+      <option value="">Property Type.</option>
+      <option value="apartment">Apartment.</option>
+      <option value="house">House.</option>
+      <option value="land">Land.</option>
+
+    </select>
+
+    <!-- Minimum Budget Input -->
+    <input type="number" name="minBudget" placeholder="Min Budget (Ksh)" />
+
+    <!-- Maximum Budget Input -->
+    <input type="number" name="maxBudget" placeholder="Max Budget (Ksh)" />
+     <div class="search-button-wrapper">
+    <!-- Search Button -->
+    <button type="submit">Search.</button>
+</div>
+  </form>
+  <!-- Search Form Ends -->
+
+</section>
+
+<!-- Font Awesome 6.5 CDN for latest icons -->
+
+<!-- 🌍 Quick Search Bar with Icons -->
+<section class="quick-search">
+  <h4>Quick Seach!</h4>
+  <form class="filter-form">
+    
+    <!-- 📍 Location Field with Map Marker Icon -->
+    <div class="filter-field">
+      <label for="location">
+        <i class="fa-solid fa-location-dot"></i> Location.
+      </label>
+      <input type="text" id="location" placeholder="Enter city or area">
+    </div>
+
+    <!-- 🏡 Property Type Field with Home Icon -->
+    <div class="filter-field">
+      <label for="type">
+        <i class="fa-solid fa-house"></i> Type.
+      </label>
+      <select id="type">
+        <option>Apartment.</option>
+        <option>Villa.</option>
+        <option>Townhouse.</option>
+      </select>
+    </div>
+
+    <!-- 💰 Budget Field with Money Icon -->
+    <div class="filter-field">
+      <label for="budget">
+        <i class="fa-solid fa-sack-dollar"></i> Budget.
+      </label>
+      <input type="number" id="budget" placeholder="Max price (KSh)">
+    </div>
+
+    <!-- 🔍 Submit Button -->
+   <div class="button-wrapper">
+    <button type="submit" class="btn-search">Search</button>
+  </div>
+</form>
+</section>
+
+<!-- 🏡 Featured Listings Section -->
+<!-- ⭐ Featured Listings Section -->
+<!-- Featured Listings Section -->
+<section class="featured-listings">
+  <h2>Featured Listings.</h2>
+
+  <!-- Scroll Buttons -->
+   <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
+  <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
+
+  <!-- Scrollable container -->
+  <div class="scroll-container">
+    <!-- Property Card 1 -->
+    <div class="listing-card">
+      <img src="img/house1.jpg" alt="House 1">
+      <div class="listing-info">
+        <h3>Modern Apartment.</h3>
+        <div class="stars">★★★★★</div>
+        <p class="price">$350,000</p>
+        <p class="location"><i class="fa fa-map-marker-alt"></i> Nairobi</p>
+        <a href="#" class="details-btn">View Details.</a>
+      </div>
+    </div>
+
+    <!-- Property Card 2 -->
+    <div class="listing-card">
+      <img src="img/house2.jpg" alt="House 2">
+      <div class="listing-info">
+        <h3>Luxury Villa.</h3>
+        <div class="stars">★★★★☆</div>
+        <p class="price">$750,000</p>
+        <p class="location"><i class="fa fa-map-marker-alt"></i> Mombasa</p>
+        <a href="#" class="details-btn">View Details.</a>
+      </div>
+    </div>
+
+    <!-- Property Card 3 -->
+    <div class="listing-card">
+      <img src="img/house3.jpg" alt="House 3">
+      <div class="listing-info">
+        <h3>Cozy Cottage.</h3>
+        <div class="stars">★★★☆☆</div>
+        <p class="price">$280,000</p>
+        <p class="location"><i class="fa fa-map-marker-alt"></i> Kisumu</p>
+        <a href="#" class="details-btn">View Details</a>
+      </div>
+    </div>
+
+    <!-- Property Card 4 -->
+    <div class="listing-card">
+      <img src="img/house4.jpg" alt="House 4">
+      <div class="listing-info">
+        <h3>Beachfront Home.</h3>
+        <div class="stars">★★★★★</div>
+        <p class="price">$620,000</p>
+        <p class="location"><i class="fa fa-map-marker-alt"></i> Kilifi</p>
+        <a href="#" class="details-btn">View Details</a>
+      </div>
+    </div>
+
+    <!-- Property Card 5 -->
+    <div class="listing-card">
+      <img src="img/house5.jpg" alt="House 5">
+      <div class="listing-info">
+        <h3>Hilltop Mansion</h3>
+        <div class="stars">★★★★★</div>
+        <p class="price">$1,200,000</p>
+        <p class="location"><i class="fa fa-map-marker-alt"></i> Nyeri</p>
+        <a href="#" class="details-btn">View Details</a>
+      </div>
+    </div>
+
+    <!-- Property Card 6 -->
+    <div class="listing-card">
+      <img src="img/house6.jpg" alt="House 6">
+      <div class="listing-info">
+        <h3>City Loft</h3>
+        <div class="stars">★★★☆☆</div>
+        <p class="price">$430,000</p>
+        <p class="location"><i class="fa fa-map-marker-alt"></i> Nakuru</p>
+        <a href="#" class="details-btn">View Details</a>
+      </div>
+    </div>
+
+    <!-- Property Card 7 -->
+    <div class="listing-card">
+      <img src="img/house7.jpg" alt="House 7">
+      <div class="listing-info">
+        <h3>Ranch Bungalow.</h3>
+        <div class="stars">★★★★☆</div>
+        <p class="price">$510,000</p>
+        <p class="location"><i class="fa fa-map-marker-alt"></i> Eldoret</p>
+        <a href="#" class="details-btn">View Details</a>
+      </div>
+    </div>
+
+    <!-- Property Card 8 -->
+    <div class="listing-card">
+      <img src="img/house8.jpg" alt="House 8">
+      <div class="listing-info">
+        <h3>River View House.</h3>
+        <div class="stars">★★★★☆</div>
+        <p class="price">$390,000</p>
+        <p class="location"><i class="fa fa-map-marker-alt"></i> Thika</p>
+        <a href="#" class="details-btn">View Details</a>
+      </div>
+    </div>
+
+    <!-- Property Card 9 -->
+    <div class="listing-card">
+      <img src="img/house9.jpg" alt="House 9">
+      <div class="listing-info">
+        <h3>Estate Home.</h3>
+        <div class="stars">★★★★★</div>
+        <p class="price">$695,000</p>
+        <p class="location"><i class="fa fa-map-marker-alt"></i> Machakos</p>
+        <a href="#" class="details-btn">View Details</a>
+      </div>
+    </div>
+
+    <!-- Property Card 10 -->
+    <div class="listing-card">
+      <img src="img/house10.jpg" alt="House 10">
+      <div class="listing-info">
+        <h3>Garden Residence.</h3>
+        <div class="stars">★★★☆☆</div>
+        <p class="price">$580,000</p>
+        <p class="location"><i class="fa fa-map-marker-alt"></i> Meru</p>
+        <a href="#" class="details-btn">View Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ================================
+     PROPERTY DETAILS - AmokaHouses
+==================================== -->
+
+<section class="property-details">
+  <div class="property-images">
+    <img src="img/house2.jpg" alt="Main View" class="property-image active">
+    <img src="img/house3.jpg" alt="View 2" class="property-image">
+    <img src="img/house4.jpg" alt="View 3" class="property-image">
+    <img src="img/house5.jpg" alt="View 4" class="property-image">
+  </div>
+
+  <div class="property-info">
+    <h2>Luxury Villa with Pool.</h2>
+    <p class="price">$750,000</p>
+    <p class="location"><i class="fas fa-map-marker-alt"></i> Mombasa.</p>
+
+    <ul class="features">
+      <li><i class="fas fa-bed"></i> 4 Bedrooms.</li>
+      <li><i class="fas fa-bath"></i> 3 Bathrooms.</li>
+      <li><i class="fas fa-home"></i> 3200 sq ft.</li>
+    </ul>
+
+    <p class="description">
+      A luxurious villa with a private pool, spacious living area, modern kitchen, and a large garden. Ideal for family comfort in a serene environment.
+    </p>
+
+    <!-- Contact Buttons -->
+    <a href="mailto:amokahouses@gmail.com" class="contact-agent">
+      <i class="fas fa-envelope"></i> Contact Agent.
+    </a>
+    <a href="https://wa.me/254700000000" class="whatsapp-agent" target="_blank">
+      <i class="fab fa-whatsapp"></i> Chat on WhatsApp.
+    </a>
+  </div>
+</section>
+
+
+<!-- Meet Our Agents Section -->
+<section class="agents-section">
+  <h2>Meet Our Agents.</h2>
+  <div class="agents-grid">
+    
+    <!-- Agent 1 -->
+    <div class="agent-card">
+      <img src="img/agent1.jpg" alt="Agent Nairobi">
+      <h3>John Mwangi.</h3>
+      <p class="county">Nairobi.</p>
+      <p>Email: <a href="mailto:john@agency.com">john@agency.com</a></p>
+      <p>Phone: 0700123456</p>
+      <a href="https://wa.me/254700123456" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> WhatsApp.
+      </a>
+    </div>
+
+    <!-- Agent 2 -->
+    <div class="agent-card">
+      <img src="img/agent2.jpg" alt="Agent Mombasa">
+      <h3>Fatma Yusuf.</h3>
+      <p class="county">Mombasa.</p>
+      <p>Email: <a href="mailto:fatma@agency.com">fatma@agency.com</a></p>
+      <p>Phone: 0700987654.</p>
+      <a href="https://wa.me/254700987654" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+
+    <!-- Agent 3 -->
+    <div class="agent-card">
+      <img src="img/agent3.jpg" alt="Agent Kisumu">
+      <h3>Otieno Brian.</h3>
+      <p class="county">Kisumu.</p>
+      <p>Email: <a href="mailto:brian@agency.com">brian@agency.com</a></p>
+      <p>Phone: 0700765432.</p>
+      <a href="https://wa.me/254700765432" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+
+    <!-- Agent 4 -->
+    <div class="agent-card">
+      <img src="img/agent4.jpg" alt="Agent Nakuru">
+      <h3>Grace Wanjiku.</h3>
+      <p class="county">Nakuru.</p>
+      <p>Email: <a href="mailto:grace@agency.com">grace@agency.com</a></p>
+      <p>Phone: 0700432198.</p>
+      <a href="https://wa.me/254700432198" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+
+    <!-- Agent 5 -->
+    <div class="agent-card">
+      <img src="img/agent5.jpg" alt="Agent Eldoret">
+      <h3>Daniel Kiprop.</h3>
+      <p class="county">Eldoret.</p>
+      <p>Email: <a href="mailto:daniel@agency.com">daniel@agency.com</a></p>
+      <p>Phone: 0700654321.</p>
+      <a href="https://wa.me/254700654321" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- ================================
+     About Us Section - AmokaHouses
+==================================== -->
+<section class="about-section" id="about">
+  <div class="about-content">
+    
+    <!-- Section Heading -->
+    <h2>About <span>Amoka-BLUE Houses.</span></h2>
+    
+    <!-- Intro Paragraph -->
+    <p>
+     - At AmokaHouses, we are committed to helping you find the perfect home. 
+      With expert agents, certified service, and a deep understanding of the market, 
+      we offer reliable real estate solutions tailored to your needs -
+    </p>
+
+    <!-- Highlights or Company Features -->
+    <div class="about-highlights">
+      
+      <!-- Highlight Box 1 -->
+      <div class="highlight">
+        <i class="fa fa-users"></i>
+        <h4>Trusted Team.</h4>
+        <p>Experienced agents with deep local knowledge.</p>
+      </div>
+
+      <!-- Highlight Box 2 -->
+      <div class="highlight">
+        <i class="fa fa-certificate"></i>
+        <h4>Licensed & Verified.</h4>
+        <p>Certified by housing authorities & fully insured.</p>
+      </div>
+
+      <!-- Highlight Box 3 -->
+      <div class="highlight">
+        <i class="fa fa-heart"></i>
+        <h4>Client First.</h4>
+        <p>We prioritize your satisfaction above all.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================
+     Footer Section
+============================ -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Column 1: Brand Info -->
+    <div class="footer-col brand">
+      <img src="img/AmokaL.png" alt="AmokaHouses Logo" class="footer-logo">
+      <p>AmokaHouses – Where comfort meets class. Your trusted partner in real estate.</p>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links.</h4>
+      <ul>
+        <li><a href="index.html">Home.</a></li>
+        <li><a href="listings.html">Listings.</a></li>
+        <li><a href="aboutus.html">About Us.</a></li>
+        <li><a href="contact.html">Contact.</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Contact Info -->
+    <div class="footer-col">
+      <h4>Contact.</h4>
+      <ul>
+        <li><i class="fa fa-map-marker-alt"></i> Nairobi, Keny.a</li>
+        <li><i class="fa fa-envelope"></i> amokahouses@gmail.com</li>
+        <li><i class="fa fa-phone"></i> +254 700 000 000</li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Social Media -->
+    <div class="footer-col">
+      <h4>Follow Us.</h4>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 AmokaHouses. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
